@@ -1,0 +1,38 @@
+{
+  "name": "current_file_path",
+  "description": "获取 CorelDRAW 当前活动文档的完整文件路径，不执行任何导出操作。",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "ver": {
+        "type": "string",
+        "description": "CorelDRAW 主版本号，例如 '26'"
+      }
+    },
+    "required": ["ver"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "description": "状态码，200 表示成功"
+      },
+      "msg": {
+        "type": "string",
+        "description": "提示信息"
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "description": "当前活动文档的完整路径"
+          }
+        },
+        "required": ["file_path"]
+      }
+    },
+    "required": ["code", "msg", "data"]
+  }
+}

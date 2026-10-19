@@ -1,0 +1,36 @@
+{
+  "name": "export_file",
+  "description": "导出当前活动文档到指定路径。若文档未保存过，则直接另存为 file_src；若已保存过，则先复制原文件到 file_src，再修改文档路径。",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "file_src": {
+        "type": "string",
+        "description": "目标文件完整路径，例如 C:\\output\\file.cdr"
+      },
+      "ver": {
+        "type": "string",
+        "description": "CorelDRAW 主版本号，例如 '26'"
+      }
+    },
+    "required": ["file_src", "ver"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "description": "状态码，200 表示成功"
+      },
+      "msg": {
+        "type": "string",
+        "description": "提示信息"
+      },
+      "data": {
+        "type": "object",
+        "description": "成功时为空对象 {}，失败时为 null"
+      }
+    },
+    "required": ["code", "msg", "data"]
+  }
+}

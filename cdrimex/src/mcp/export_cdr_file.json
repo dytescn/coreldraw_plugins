@@ -1,0 +1,36 @@
+{
+  "name": "export_cdr_file",
+  "description": "复制当前文档的原始文件到指定路径（不修改文档内部路径）。",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "file_src": {
+        "type": "string",
+        "description": "目标文件路径"
+      },
+      "ver": {
+        "type": "string",
+        "description": "CorelDRAW 主版本号"
+      }
+    },
+    "required": ["file_src", "ver"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "description": "状态码，200 表示成功"
+      },
+      "msg": {
+        "type": "string",
+        "description": "提示信息"
+      },
+      "data": {
+        "type": "object",
+        "description": "成功时为空对象 {}，失败时为 null"
+      }
+    },
+    "required": ["code", "msg", "data"]
+  }
+}

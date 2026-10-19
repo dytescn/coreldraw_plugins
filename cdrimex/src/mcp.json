@@ -1,0 +1,12 @@
+{
+  "tools": [
+    "export_file.json",
+    "export_cdr_file.json",
+    "current_file_path.json",
+    "export_cover.json",
+    "export_selection_cover.json",
+    "export_select_comps.json",
+    "export_preview.json",
+    "export_preview_sum.json"
+  ]
+}

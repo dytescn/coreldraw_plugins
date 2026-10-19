@@ -1,0 +1,36 @@
+{
+  "name": "export_selection_cover",
+  "description": "将当前选中对象导出为 PNG 封面图，以 600x600 为目标尺寸，保持纵横比，背景透明。",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "cover_src": {
+        "type": "string",
+        "description": "封面图片保存路径"
+      },
+      "ver": {
+        "type": "string",
+        "description": "CorelDRAW 主版本号"
+      }
+    },
+    "required": ["cover_src", "ver"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "description": "状态码，200 表示成功"
+      },
+      "msg": {
+        "type": "string",
+        "description": "提示信息"
+      },
+      "data": {
+        "type": "object",
+        "description": "成功时为空对象 {}，失败时为 null"
+      }
+    },
+    "required": ["code", "msg", "data"]
+  }
+}

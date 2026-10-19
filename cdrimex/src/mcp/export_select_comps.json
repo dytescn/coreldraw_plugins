@@ -1,0 +1,40 @@
+{
+  "name": "export_select_comps",
+  "description": "将当前选中的对象导出为指定文件类型。支持 png、jpg/jpeg、pdf。",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "file_src": {
+        "type": "string",
+        "description": "导出文件保存路径"
+      },
+      "file_type_name": {
+        "type": "string",
+        "description": "文件类型标识符，支持 'png'、'jpg'/'jpeg'、'pdf'"
+      },
+      "ver": {
+        "type": "string",
+        "description": "CorelDRAW 主版本号"
+      }
+    },
+    "required": ["file_src", "file_type_name", "ver"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "description": "状态码，200 表示成功"
+      },
+      "msg": {
+        "type": "string",
+        "description": "提示信息"
+      },
+      "data": {
+        "type": "object",
+        "description": "成功时为空对象 {}，失败时为 null"
+      }
+    },
+    "required": ["code", "msg", "data"]
+  }
+}

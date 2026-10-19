@@ -1,0 +1,20 @@
+{
+  "name": "cdrimex",
+  "version": "1.0.1",
+  "description": "cdrimex for coreldraw",
+  "keywords": ["coreldraw", "management"],
+  "author": "funxdata",
+  "type": "sys",
+  "exports": {
+      "./target/release/cdrimex.dll":"cdrimex.dll",
+      "./mcp.json":"mcp.json",
+      "./mcp/export_file.json":"export_file.json",
+      "./mcp/export_cdr_file.json":"export_cdr_file.json",
+      "./mcp/current_file_path.json":"current_file_path.json",
+      "./mcp/export_cover.json":"export_cover.json",
+      "./mcp/export_selection_cover.json":"export_selection_cover.json",
+      "./mcp/export_select_comps.json":"export_select_comps.json",
+      "./mcp/export_preview.json":"export_preview.json",
+      "./mcp/export_preview_sum.json":"export_preview_sum.json"
+  }
+}

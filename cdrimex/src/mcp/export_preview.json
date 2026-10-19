@@ -1,0 +1,42 @@
+{
+  "name": "export_preview",
+  "description": "将当前文档的每一页导出为 PNG 预览图，以 2000x2000 为目标尺寸，透明背景。preview_src 是文件名前缀，实际输出为 {preview_src}{页码}_preview.png，并返回总页数。",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "preview_src": {
+        "type": "string",
+        "description": "输出文件名前缀（可包含目录），例如 C:\\preview\\page_"
+      },
+      "ver": {
+        "type": "string",
+        "description": "CorelDRAW 主版本号"
+      }
+    },
+    "required": ["preview_src", "ver"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "description": "状态码，200 表示成功"
+      },
+      "msg": {
+        "type": "string",
+        "description": "提示信息"
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "page_count": {
+            "type": "integer",
+            "description": "导出的总页数"
+          }
+        },
+        "required": ["page_count"]
+      }
+    },
+    "required": ["code", "msg", "data"]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "export_preview_sum",
+  "description": "获取 CorelDRAW 当前活动文档的总页数，不执行任何导出操作。",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "ver": {
+        "type": "string",
+        "description": "CorelDRAW 主版本号，例如 '26'"
+      }
+    },
+    "required": ["ver"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer",
+        "description": "状态码，200 表示成功"
+      },
+      "msg": {
+        "type": "string",
+        "description": "提示信息"
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "page_count": {
+            "type": "integer",
+            "description": "当前文档的总页数"
+          }
+        },
+        "required": ["page_count"]
+      }
+    },
+    "required": ["code", "msg", "data"]
+  }
+}
